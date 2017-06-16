@@ -31,10 +31,10 @@ void NewsSpider::testPy()
 	//PyObject* PyIns = PyInstance_New(pyCls, NULL, NULL); // 创建tester类
 	//PyObject* pyRet = PyObject_CallMethod(PyIns, "add", "ii", 5, 6); // 调用tester.add方法，传入2个int型参数
 
-	PyObject* pFunc = PyObject_GetAttrString( pyMod, "getHtml");
-	char* cstr = "http://tieba.baidu.com/p/2738151262";
+	PyObject* pFunc = PyObject_GetAttrString( pyMod, "result");
+	/*char* cstr = "http://tieba.baidu.com/p/2738151262";
 	PyObject* pargs = Py_BuildValue("(s)", cstr);
-	PyObject* pstr = PyEval_CallObject(pFunc, pargs);
+	PyObject* pstr = PyEval_CallObject(pFunc, pargs);*/
 	char* result_str;
 	if (PyArg_Parse(pFunc, "s", &result_str))
 	{
