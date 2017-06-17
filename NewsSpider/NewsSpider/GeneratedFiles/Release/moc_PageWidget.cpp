@@ -1,14 +1,14 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'newsspider.h'
+** Meta object code from reading C++ file 'PageWidget.h'
 **
 ** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.6)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../newsspider.h"
+#include "../../PageWidget.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'newsspider.h' doesn't include <QObject>."
+#error "The header file 'PageWidget.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.6. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -16,7 +16,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_NewsSpider[] = {
+static const uint qt_meta_data_PageWidget[] = {
 
  // content:
        6,       // revision
@@ -35,15 +35,15 @@ static const uint qt_meta_data_NewsSpider[] = {
        0        // eod
 };
 
-static const char qt_meta_stringdata_NewsSpider[] = {
-    "NewsSpider\0\0page\0currentPageChanged(int)\0"
+static const char qt_meta_stringdata_PageWidget[] = {
+    "PageWidget\0\0page\0currentPageChanged(int)\0"
 };
 
-void NewsSpider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void PageWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        NewsSpider *_t = static_cast<NewsSpider *>(_o);
+        PageWidget *_t = static_cast<PageWidget *>(_o);
         switch (_id) {
         case 0: _t->currentPageChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
@@ -51,35 +51,35 @@ void NewsSpider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     }
 }
 
-const QMetaObjectExtraData NewsSpider::staticMetaObjectExtraData = {
+const QMetaObjectExtraData PageWidget::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject NewsSpider::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_NewsSpider,
-      qt_meta_data_NewsSpider, &staticMetaObjectExtraData }
+const QMetaObject PageWidget::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_PageWidget,
+      qt_meta_data_PageWidget, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &NewsSpider::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &PageWidget::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *NewsSpider::metaObject() const
+const QMetaObject *PageWidget::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *NewsSpider::qt_metacast(const char *_clname)
+void *PageWidget::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_NewsSpider))
-        return static_cast<void*>(const_cast< NewsSpider*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_PageWidget))
+        return static_cast<void*>(const_cast< PageWidget*>(this));
+    return QWidget::qt_metacast(_clname);
 }
 
-int NewsSpider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int PageWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -91,7 +91,7 @@ int NewsSpider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void NewsSpider::currentPageChanged(int _t1)
+void PageWidget::currentPageChanged(int _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

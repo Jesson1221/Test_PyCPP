@@ -20,6 +20,7 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
+#include <QtGui/QSpacerItem>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
@@ -35,6 +36,20 @@ public:
     QLabel *label;
     QLineEdit *lineEdit;
     QListWidget *newsListWidget;
+    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer;
+    QLabel *previousPageLable;
+    QWidget *leftPagesWidget;
+    QLabel *leftSeparateLable;
+    QWidget *centerPagesWidget;
+    QLabel *rightSeparateLable;
+    QWidget *rightPagesWidget;
+    QLabel *nextPageLable;
+    QSpacerItem *horizontalSpacer_2;
+    QLabel *DiLable;
+    QLineEdit *pageLineEdit;
+    QLabel *YeLable;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -43,12 +58,12 @@ public:
     {
         if (NewsSpiderClass->objectName().isEmpty())
             NewsSpiderClass->setObjectName(QString::fromUtf8("NewsSpiderClass"));
-        NewsSpiderClass->resize(583, 522);
+        NewsSpiderClass->resize(800, 516);
         centralWidget = new QWidget(NewsSpiderClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(190, 30, 189, 22));
+        layoutWidget->setGeometry(QRect(50, 30, 189, 22));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -66,11 +81,78 @@ public:
 
         newsListWidget = new QListWidget(centralWidget);
         newsListWidget->setObjectName(QString::fromUtf8("newsListWidget"));
-        newsListWidget->setGeometry(QRect(50, 60, 481, 331));
+        newsListWidget->setGeometry(QRect(50, 60, 691, 331));
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(50, 401, 351, 31));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        previousPageLable = new QLabel(layoutWidget1);
+        previousPageLable->setObjectName(QString::fromUtf8("previousPageLable"));
+
+        horizontalLayout_2->addWidget(previousPageLable);
+
+        leftPagesWidget = new QWidget(layoutWidget1);
+        leftPagesWidget->setObjectName(QString::fromUtf8("leftPagesWidget"));
+
+        horizontalLayout_2->addWidget(leftPagesWidget);
+
+        leftSeparateLable = new QLabel(layoutWidget1);
+        leftSeparateLable->setObjectName(QString::fromUtf8("leftSeparateLable"));
+
+        horizontalLayout_2->addWidget(leftSeparateLable);
+
+        centerPagesWidget = new QWidget(layoutWidget1);
+        centerPagesWidget->setObjectName(QString::fromUtf8("centerPagesWidget"));
+
+        horizontalLayout_2->addWidget(centerPagesWidget);
+
+        rightSeparateLable = new QLabel(layoutWidget1);
+        rightSeparateLable->setObjectName(QString::fromUtf8("rightSeparateLable"));
+
+        horizontalLayout_2->addWidget(rightSeparateLable);
+
+        rightPagesWidget = new QWidget(layoutWidget1);
+        rightPagesWidget->setObjectName(QString::fromUtf8("rightPagesWidget"));
+
+        horizontalLayout_2->addWidget(rightPagesWidget);
+
+        nextPageLable = new QLabel(layoutWidget1);
+        nextPageLable->setObjectName(QString::fromUtf8("nextPageLable"));
+
+        horizontalLayout_2->addWidget(nextPageLable);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        DiLable = new QLabel(layoutWidget1);
+        DiLable->setObjectName(QString::fromUtf8("DiLable"));
+
+        horizontalLayout_2->addWidget(DiLable);
+
+        pageLineEdit = new QLineEdit(layoutWidget1);
+        pageLineEdit->setObjectName(QString::fromUtf8("pageLineEdit"));
+        pageLineEdit->setMaxLength(32000);
+
+        horizontalLayout_2->addWidget(pageLineEdit);
+
+        YeLable = new QLabel(layoutWidget1);
+        YeLable->setObjectName(QString::fromUtf8("YeLable"));
+
+        horizontalLayout_2->addWidget(YeLable);
+
         NewsSpiderClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NewsSpiderClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 583, 23));
+        menuBar->setGeometry(QRect(0, 0, 800, 23));
         NewsSpiderClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(NewsSpiderClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -88,6 +170,18 @@ public:
     {
         NewsSpiderClass->setWindowTitle(QApplication::translate("NewsSpiderClass", "NewsSpider", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("NewsSpiderClass", "\346\220\234\347\264\242\346\226\260\351\227\273", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        previousPageLable->setToolTip(QApplication::translate("NewsSpiderClass", "\344\270\212\344\270\200\351\241\265", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        previousPageLable->setText(QApplication::translate("NewsSpiderClass", "<<", 0, QApplication::UnicodeUTF8));
+        leftSeparateLable->setText(QApplication::translate("NewsSpiderClass", "..", 0, QApplication::UnicodeUTF8));
+        rightSeparateLable->setText(QApplication::translate("NewsSpiderClass", "..", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        nextPageLable->setToolTip(QApplication::translate("NewsSpiderClass", "\344\270\213\344\270\200\351\241\265", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        nextPageLable->setText(QApplication::translate("NewsSpiderClass", ">>", 0, QApplication::UnicodeUTF8));
+        DiLable->setText(QApplication::translate("NewsSpiderClass", "\347\254\254", 0, QApplication::UnicodeUTF8));
+        YeLable->setText(QApplication::translate("NewsSpiderClass", "\351\241\265", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

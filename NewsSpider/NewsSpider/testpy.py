@@ -34,14 +34,12 @@ def getNews(url):  # 获取新闻内容
     return news
 
 
-def saveAsTxt(news):  # 保存新闻内容
-    file = open('D:/news.txt', 'a')
-    file.write("标题:" + news.title +
-               "\t时间:" + news.time +
-               #               "\t类型:"+ news.type +
-               "\t内容:" + news.content +
-               "\"\n")
-
+def saveAsTxt(url, news):  # 保存新闻链接内容
+    file = open('news.txt', 'a')
+    file.write("标题:" + news.title.decode('UTF-8', 'ignore') +
+               "\t时间:" + news.time.decode('UTF-8', 'ignore') +
+               "\t链接:" + url +
+               "\n")
 
 start = time.clock()
 sum = 0
@@ -52,9 +50,9 @@ for i in range(1, 40):
     #    print "当前页解析出 %s 条" %len(urls)
     j = 1
     for url in urls:
-        print "正在读取第%s页第%s/%s条:%s" % (i, j, len(urls), url.encode('utf-8'))
+        print ("正在读取第%s页第%s/%s条:%s" % (i, j, len(urls), url.encode('utf-8')))
         news = getNews(url)
-        saveAsTxt(news)
+        saveAsTxt(url, news)
         j = j + 1
 end = time.clock()
-print "共爬取%s条新闻，耗时%f s" % (sum, end - start)
+print ("共爬取%s条新闻，耗时%f s" % (sum, end - start))

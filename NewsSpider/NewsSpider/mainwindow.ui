@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>583</width>
-    <height>522</height>
+    <width>800</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>50</x>
       <y>30</y>
       <width>189</width>
       <height>22</height>
@@ -41,10 +41,112 @@
      <rect>
       <x>50</x>
       <y>60</y>
-      <width>481</width>
+      <width>691</width>
       <height>331</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>401</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="previousPageLable">
+       <property name="toolTip">
+        <string>上一页</string>
+       </property>
+       <property name="text">
+        <string>&lt;&lt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="leftPagesWidget" native="true"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="leftSeparateLable">
+       <property name="text">
+        <string>..</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="centerPagesWidget" native="true"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="rightSeparateLable">
+       <property name="text">
+        <string>..</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="rightPagesWidget" native="true"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="nextPageLable">
+       <property name="toolTip">
+        <string>下一页</string>
+       </property>
+       <property name="text">
+        <string>&gt;&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="DiLable">
+       <property name="text">
+        <string>第</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="pageLineEdit">
+       <property name="maxLength">
+        <number>32000</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="YeLable">
+       <property name="text">
+        <string>页</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -52,7 +154,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>583</width>
+     <width>800</width>
      <height>23</height>
     </rect>
    </property>
