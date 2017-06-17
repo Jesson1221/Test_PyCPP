@@ -17,11 +17,11 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
-#include <QtGui/QListWidget>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QStatusBar>
+#include <QtGui/QTableWidget>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
@@ -35,7 +35,6 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *lineEdit;
-    QListWidget *newsListWidget;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
@@ -50,6 +49,7 @@ public:
     QLabel *DiLable;
     QLineEdit *pageLineEdit;
     QLabel *YeLable;
+    QTableWidget *newsTableWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -79,9 +79,6 @@ public:
 
         horizontalLayout->addWidget(lineEdit);
 
-        newsListWidget = new QListWidget(centralWidget);
-        newsListWidget->setObjectName(QString::fromUtf8("newsListWidget"));
-        newsListWidget->setGeometry(QRect(50, 60, 691, 331));
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(50, 401, 351, 31));
@@ -149,6 +146,9 @@ public:
 
         horizontalLayout_2->addWidget(YeLable);
 
+        newsTableWidget = new QTableWidget(centralWidget);
+        newsTableWidget->setObjectName(QString::fromUtf8("newsTableWidget"));
+        newsTableWidget->setGeometry(QRect(50, 60, 651, 331));
         NewsSpiderClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NewsSpiderClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

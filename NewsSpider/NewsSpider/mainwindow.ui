@@ -36,16 +36,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QListWidget" name="newsListWidget">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>691</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
@@ -147,6 +137,16 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QTableWidget" name="newsTableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>60</y>
+      <width>651</width>
+      <height>331</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

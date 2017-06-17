@@ -26,6 +26,19 @@ NewsSpider::~NewsSpider()
 
 void NewsSpider::initialize()
 {
+	// 初始化新闻窗口界面: 3列 15行
+	ui.newsTableWidget->setColumnCount(3);
+	ui.newsTableWidget->setRowCount(NEWS_COUNT_PER_PAGE);
+
+	QStringList headers;
+	headers << "标题" << "时间" << "链接";
+	ui.newsTableWidget->setHorizontalHeaderLabels(headers);
+
+	// 设置第一列宽
+	ui.newsTableWidget->setColumnWidth(0,300);  
+	ui.newsTableWidget->setColumnWidth(1,150); 
+	ui.newsTableWidget->setColumnWidth(2,300); 
+
 	ui.pageLineEdit->installEventFilter(this);
 	ui.pageLineEdit->setValidator(new QIntValidator(1, 10000000, this));
 
@@ -236,7 +249,7 @@ void NewsSpider::showPageNum()
 void NewsSpider::showCurPageNews()
 {
 	// 清空当前新闻显示框
-	ui.newsListWidget->clear();
+	ui.newsTableWidget->clear();
 
 	int iStartNum = (m_cur_page - 1) * NEWS_COUNT_PER_PAGE;
 	int iEndNum = iStartNum + NEWS_COUNT_PER_PAGE;
@@ -250,7 +263,20 @@ void NewsSpider::showCurPageNews()
 	// 显示当前页新闻
 	for (int i = iStartNum; i < iEndNum; ++i)
 	{
-		ui.newsListWidget->insertItem(i, m_map_news[i]);
+		// 新闻标题格式为： 标题;时间;链接
+		QStringList strlist = m_map_news[i].split(";");
+
+		// 标题
+		QString title = strlist[0];
+		ui.newsTableWidget->setItem(i, 0, new QTableWidgetItem(title));
+
+		// 时间
+		QString time = strlist[1];
+		ui.newsTableWidget->setItem(i, 1, new QTableWidgetItem(time));
+
+		// 链接
+		QString url = strlist[2];
+		ui.newsTableWidget->setItem(i, 2, new QTableWidgetItem(url));	
 	}
 }
 

@@ -36,9 +36,9 @@ def getNews(url):  # 获取新闻内容
 
 def saveAsTxt(url, news):  # 保存新闻链接内容
     file = open('news.txt', 'a')
-    file.write("标题:" + news.title.decode('UTF-8', 'ignore') +
-               "\t时间:" + news.time.decode('UTF-8', 'ignore') +
-               "\t链接:" + url +
+    file.write(news.title.decode('UTF-8', 'ignore') +
+               "\t;" + news.time.decode('UTF-8', 'ignore') +
+               "\t;" + url +
                "\n")
 
 start = time.clock()
