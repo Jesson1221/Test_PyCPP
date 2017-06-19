@@ -148,7 +148,7 @@ public:
 
         newsTableWidget = new QTableWidget(centralWidget);
         newsTableWidget->setObjectName(QString::fromUtf8("newsTableWidget"));
-        newsTableWidget->setGeometry(QRect(50, 60, 651, 331));
+        newsTableWidget->setGeometry(QRect(50, 70, 621, 311));
         NewsSpiderClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NewsSpiderClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

@@ -47,11 +47,20 @@ private:
 		m_cur_page = curPage;
 	}
 
+private slots:
+	void cutomContextMenuRequest(QPoint pos);
+	void copyChoosedContent();
+
 signals:
 	void currentPageChanged(int page);
 
 private:
 	Ui::NewsSpiderClass ui;
+
+	// 新闻显示框中添加右键菜单
+	QMenu *popMenu;
+	QAction *action_copy;
+
 	PageWidget *pageWidget;
 	QList<QLabel *> *pageLabels;
 	int m_blockSize;

@@ -22,7 +22,7 @@ static const uint qt_meta_data_NewsSpider[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,11 +32,15 @@ static const uint qt_meta_data_NewsSpider[] = {
  // signals: signature, parameters, type, tag, flags
       17,   12,   11,   11, 0x05,
 
+ // slots: signature, parameters, type, tag, flags
+      45,   41,   11,   11, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_NewsSpider[] = {
     "NewsSpider\0\0page\0currentPageChanged(int)\0"
+    "pos\0cutomContextMenuRequest(QPoint)\0"
 };
 
 void NewsSpider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -46,6 +50,7 @@ void NewsSpider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         NewsSpider *_t = static_cast<NewsSpider *>(_o);
         switch (_id) {
         case 0: _t->currentPageChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->cutomContextMenuRequest((*reinterpret_cast< QPoint(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -83,9 +88,9 @@ int NewsSpider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

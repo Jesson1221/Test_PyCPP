@@ -17,6 +17,8 @@ NewsSpider::NewsSpider(QWidget *parent, Qt::WFlags flags)
 	m_cur_page = 1;
 
 	initialize();
+
+	connect(action_copy, SIGNAL(triggered()), this, SLOT(copyChoosedContent()));
 }
 
 NewsSpider::~NewsSpider()
@@ -30,14 +32,27 @@ void NewsSpider::initialize()
 	ui.newsTableWidget->setColumnCount(3);
 	ui.newsTableWidget->setRowCount(NEWS_COUNT_PER_PAGE);
 
-	QStringList headers;
-	headers << "标题" << "时间" << "链接";
-	ui.newsTableWidget->setHorizontalHeaderLabels(headers);
-
 	// 设置第一列宽
 	ui.newsTableWidget->setColumnWidth(0,300);  
 	ui.newsTableWidget->setColumnWidth(1,150); 
 	ui.newsTableWidget->setColumnWidth(2,300); 
+
+	// 设置列标题
+	QStringList headers;
+	headers << "标题" << "时间" << "链接";
+	ui.newsTableWidget->setHorizontalHeaderLabels(headers);
+
+	// 设置新闻信息不可编辑
+	ui.newsTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+	// 设置标题栏显示为粗体
+	QFont font;
+	font.setBold(true);
+	ui.newsTableWidget->horizontalHeader()->setFont(font);
+
+	// 初始化右键菜单
+	popMenu = new QMenu(ui.newsTableWidget);
+	action_copy = new QAction("复制", this);
 
 	ui.pageLineEdit->installEventFilter(this);
 	ui.pageLineEdit->setValidator(new QIntValidator(1, 10000000, this));
@@ -102,6 +117,17 @@ void NewsSpider::initialize()
 
 	//显示初始页面及新闻
 	showPageLabels();
+}
+
+void NewsSpider::cutomContextMenuRequest(QPoint pos)
+{
+	popMenu->addAction(action_copy);
+	popMenu->exec(QCursor::pos());
+}
+
+void NewsSpider::copyChoosedContent()
+{
+
 }
 
 bool NewsSpider::readNews(const QString& filePath)
