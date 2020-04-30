@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 		+ QString(".QLabel[page=\"true\"]:hover { color: white; border-radius: 4px; background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(53, 121, 238, 255), stop:1 rgba(0, 202, 237, 255));}");
 	a.setStyleSheet(qss);
 
-	printf("hello world!");
+	printf("test222.....");
 
 	NewsSpider w;
 	w.show();
